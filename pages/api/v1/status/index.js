@@ -1,9 +1,15 @@
 import database from "../../../../infra/database.js";
 
 async function status(request, response) {
-  const result = await database.query("SELECT 1 + 1 as sum;");
-  console.log(result.rows);
-  response.status(200).json({ chave: "keep moving forward" });
+  try {
+    await database.query("SELECT 1;");
+
+    response.status(200).json({ chave: "keep moving forward" });
+  } catch (error) {
+    console.log("Error ao conectar ao banco de dados:", error);
+
+    response.status(500);
+  }
 }
 
 export default status;
