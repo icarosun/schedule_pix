@@ -1,6 +1,8 @@
+import React from "react";
+
 function Home() {
   return (
-    <>
+    <div>
       <h1>Schedule Your Appointment</h1>
       <label>Name: </label>
       <input placeholder="Enter your name" />
@@ -15,7 +17,7 @@ function Home() {
       <input type="time" />
 
       <button>Schedule Appointment</button>
-    </>
+    </div>
   );
 }
 
