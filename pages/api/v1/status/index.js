@@ -1,4 +1,4 @@
-import database from "../../../../infra/database.js";
+import database from "infra/database.js";
 
 async function status(request, response) {
   try {
@@ -8,7 +8,7 @@ async function status(request, response) {
   } catch (error) {
     console.log("Error ao conectar ao banco de dados:", error);
 
-    response.status(500);
+    response.status(500).json("Error ao conectar no banco de dados");
   }
 }
 
